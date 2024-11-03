@@ -26,3 +26,17 @@ kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernete
 AmazonEBSCSIDriverPolicy --> attach this policy
 
 5. 
+
+namespace setup
+==============
+everytime we are giving namespace, to skip that do below.
+
+sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
+to set the namespace
+
+kubens expense
+
+kubectl get pods --> now no need to give -n expense
