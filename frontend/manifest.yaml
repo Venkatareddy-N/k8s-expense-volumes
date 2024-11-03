@@ -23,7 +23,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: venkat2607/frontend:1.0
+        #image: venkat2607/frontend:1.0
+        image: joindevops/frontend:v1
 ---
 kind: Service
 apiVersion: v1
