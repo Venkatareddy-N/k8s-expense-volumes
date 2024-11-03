@@ -8,7 +8,7 @@ metadata:
     project: expense
     environment: dev
 
-2. create sc
+2. create sc (Storage class)
 
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
@@ -19,3 +19,10 @@ provisioner: ebs.csi.aws.com
 volumeBindingMode: WaitForFirstConsumer
 
 
+3. driver installation
+kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.36"
+
+4. give ebs permissions to eks nodes
+AmazonEBSCSIDriverPolicy --> attach this policy
+
+5. 
