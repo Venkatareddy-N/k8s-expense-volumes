@@ -1,0 +1,21 @@
+1. Create namespace
+
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: expense
+  labels:
+    project: expense
+    environment: dev
+
+2. create sc
+
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: expense-ebs
+reclaimPolicy: Retain
+provisioner: ebs.csi.aws.com
+volumeBindingMode: WaitForFirstConsumer
+
+
