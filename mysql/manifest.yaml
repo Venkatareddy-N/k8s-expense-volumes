@@ -4,13 +4,13 @@ metadata:
   name: mysql-headless
   namespace: expense
 spec:
-  clusterIP: none # for headless service there is no cluster IP
+  clusterIP: None # for headless service there is no cluster IP
   selector:
     project: expense
     component: mysql
     tier: db
   ports:
-    protocol: TCP
+  - protocol: TCP
     port: 3306 #service port
     targetPort: 3306 #container port
 ---
@@ -25,7 +25,7 @@ spec:
     component: mysql
     tier: db
   ports:
-    protocol: TCP
+  - protocol: TCP
     port: 3306 #service port
     targetPort: 3306 #container port
 ---
